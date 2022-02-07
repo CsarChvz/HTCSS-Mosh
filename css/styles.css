@@ -1,5 +1,115 @@
-:root{
-    --color-primary: #2584ff;
-    --color-secondary: #00d9ff;
-    --color-ascent: #ff3400;
+:root {
+  --color-primary: #2584ff;
+  --color-secondary: #00d9ff;
+  --color-accent: #ff3400;
+  --color-headings: #1b0760;
+  --color-body: #918ca4;
+}
+
+html {
+  /* 62.5% of 16px = 10px */
+  font-size: 62.5%;
+}
+
+/* Topografía */
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-headings);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+p {
+  margin-top: 0;
+}
+
+/* Media queries para pantallas mayores a 1024 */
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+}
+
+
+/* Links */
+a{
+    text-decoration: none;
+}
+
+.link-arrow{
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.link-arrow::after{
+    content: "-->";
+    margin-left: 5px;
+    /* Se coloca una transición en el margin  */
+    transition: margin 0.15s;
+}
+
+/* Se usa un hover para el después */
+.link-arrow:hover::after{
+    margin-left: 10px;
+}
+@media screen and (min-width: 1024px) {
+    .link-arrow{
+        font-size: 1.5rem;
+    }
+}
+
+/* Badges */
+/* Se va a seguir el principio de POO- Modelos con diferentes pieles */
+
+/* Primero: Se define la estrucutra */
+
+.badge{
+    border-radius: 20px;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+    /* Se pone esto para qeu no salte a otra linea */
+    white-space: nowrap;
+}
+    /* Se sigue el principio de BEM */  
+        /* En este caso se pone nombreClase con "--" para un elemento */
+.badge--primary{
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.badge--secondary{
+    background-color: var(--color-secondary);
+    color: white;
 }
