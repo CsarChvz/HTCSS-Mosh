@@ -128,3 +128,36 @@ a{
     font-size: 1.2rem;
   }
 }
+
+/* Listas */
+
+.list{
+  list-style: none;
+  padding-left: 0;
+  color: var(--color-headings);
+}
+/* Se debe de aplicar object oriented css para crear otro tipo de lista apartir de la anterior */
+/* Separar estructura de la skin */
+
+/* Se sigue lo de BEM, en este caso para poner un elemento se ponen "__"  para identificar que es un elemento*/
+.list--inline .list__item{
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.list--tick{
+  list-style-image: url(../src/tick.svg);
+  padding-left: 3rem;
+}
+
+/* Se aplica a los elemento que tienen la clase principal */
+.list--tick .list__item{
+  padding-left: 00.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item{
+    padding-left: 0;
+  }
+  
+}
