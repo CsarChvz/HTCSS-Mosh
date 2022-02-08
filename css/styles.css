@@ -4,9 +4,12 @@
   --color-accent: #ff3400;
   --color-headings: #1b0760;
   --color-body: #918ca4;
+  --color--borders: #ccc;
 }
 
-*, *::after, *::before{
+*,
+*::after,
+*::before {
   /* Se coloca el box-sizing como border box para que agarre los valores del padding con el de contenido y sean juntos, no para que sume aparte */
   box-sizing: border-box;
 }
@@ -66,33 +69,32 @@ p {
   }
 }
 
-
 /* Links */
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-.link-arrow{
-    color: var(--color-accent);
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: bold;
+.link-arrow {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
 }
-.link-arrow::after{
-    content: "-->";
-    margin-left: 5px;
-    /* Se coloca una transición en el margin  */
-    transition: margin 0.15s;
+.link-arrow::after {
+  content: "-->";
+  margin-left: 5px;
+  /* Se coloca una transición en el margin  */
+  transition: margin 0.15s;
 }
 
 /* Se usa un hover para el después */
-.link-arrow:hover::after{
-    margin-left: 10px;
+.link-arrow:hover::after {
+  margin-left: 10px;
 }
 @media screen and (min-width: 1024px) {
-    .link-arrow{
-        font-size: 1.5rem;
-    }
+  .link-arrow {
+    font-size: 1.5rem;
+  }
 }
 
 /* Badges */
@@ -100,43 +102,43 @@ a{
 
 /* Primero: Se define la estrucutra */
 
-.badge{
-    border-radius: 20px;
-    padding: 0.5rem 2rem;
-    font-weight: 600;
-    font-size: 2rem;
-    /* Se pone esto para qeu no salte a otra linea */
-    white-space: nowrap;
+.badge {
+  border-radius: 20px;
+  padding: 0.5rem 2rem;
+  font-weight: 600;
+  font-size: 2rem;
+  /* Se pone esto para qeu no salte a otra linea */
+  white-space: nowrap;
 }
-    /* Se sigue el principio de BEM */  
-        /* En este caso se pone nombreClase con "--" para un elemento */
-.badge--primary{
-    background-color: var(--color-primary);
-    color: white;
-}
-
-.badge--secondary{
-    background-color: var(--color-secondary);
-    color: white;
+/* Se sigue el principio de BEM */
+/* En este caso se pone nombreClase con "--" para un elemento */
+.badge--primary {
+  background-color: var(--color-primary);
+  color: white;
 }
 
-.badge--small{
+.badge--secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.badge--small {
   font-size: 1.6rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .badge{
+  .badge {
     font-size: 1.5rem;
   }
 
-  .badge--small{
+  .badge--small {
     font-size: 1.2rem;
   }
 }
 
 /* Listas */
 
-.list{
+.list {
   list-style: none;
   padding-left: 0;
   color: var(--color-headings);
@@ -145,39 +147,38 @@ a{
 /* Separar estructura de la skin */
 
 /* Se sigue lo de BEM, en este caso para poner un elemento se ponen "__"  para identificar que es un elemento*/
-.list--inline .list__item{
+.list--inline .list__item {
   display: inline-block;
   margin-right: 2rem;
 }
 
-.list--tick{
+.list--tick {
   list-style-image: url(../src/tick.svg);
   padding-left: 3rem;
 }
 
 /* Se aplica a los elemento que tienen la clase principal */
-.list--tick .list__item{
+.list--tick .list__item {
   padding-left: 00.5rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .list--tick .list__item{
+  .list--tick .list__item {
     padding-left: 0;
   }
-  
 }
 
 /* Icons */
-.icon{
+.icon {
   width: 40px;
   height: 40px;
 }
 
-.icon--primary{
-  fill: var(--color-primary);   
+.icon--primary {
+  fill: var(--color-primary);
 }
 
-.icon-container{
+.icon-container {
   align-items: center;
   background: #f3f9fa;
   border-radius: 100%;
@@ -189,7 +190,7 @@ a{
 
 /* Botones */
 
-.btn{
+.btn {
   border-radius: 40px;
   border: 0;
   cursor: pointer;
@@ -202,71 +203,66 @@ a{
   text-align: center;
 }
 
-.btn--primary{
+.btn--primary {
   background: var(--color-primary);
   color: #fff;
 }
 
-.btn--primary:hover{
+.btn--primary:hover {
   background: #3a8ffd;
 }
 
-.btn--secondary{
+.btn--secondary {
   background: var(--color-secondary);
   color: #fff;
 }
 
-.btn--secondary:hover{
+.btn--secondary:hover {
   background: #00c8eb;
-
 }
 
-.btn--accent{
+.btn--accent {
   background: var(--color-accent);
   color: #fff;
 }
-.btn--accent:hover{
+.btn--accent:hover {
   background: #ec3000;
-
 }
 
-  /* Se hace el boton como bloque para modifcarlo */
-.btn--block{
+/* Se hace el boton como bloque para modifcarlo */
+.btn--block {
   width: 100%;
   display: inline-block;
-
 }
 
-.btn--outline{
+.btn--outline {
   background: #fff;
   color: var(--color-headings);
   border: 2px solid var(--color-headings);
 }
 
-.btn--outline:hover{
+.btn--outline:hover {
   background: var(--color-headings);
   color: #fff;
-
 }
 @media screen and (min-width: 1024px) {
-  .btn{
-    font-size:  1.5rem;
+  .btn {
+    font-size: 1.5rem;
   }
 }
 
 /* Inputs */
 
-.input{
+.input {
   font-size: 2rem;
   color: var(--color-headings);
   padding: 2rem 3rem;
   border-radius: 30px;
   outline: 0;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color--borders);
 }
 
-
-::placeholder{
+::placeholder {
   color: #cdcbd7;
 }
 /* .input--block{
@@ -274,9 +270,27 @@ a{
   width: 100%;
 } */
 
+.input-group {
+  border: 1px solid var(--color--borders);
+  border-radius: 30px;
+  display: flex;
+}
+
+/* Nesting */
+
+/* Esto dice que cuando estemos en un grupo input y haya un input, este debe de etner esto */
+.input-group .input {
+  border: none;
+  flex-grow: 1;
+}
+
+/* Clase hija adentro de la clase padre */
+
+.input-group .btn {
+  margin: 4px;
+}
 @media screen and (min-width: 1024px) {
-  .input{
+  .input {
     font-size: 1.5rem;
   }
-  
 }
