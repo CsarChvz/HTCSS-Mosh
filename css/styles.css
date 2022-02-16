@@ -260,6 +260,10 @@ a {
   color: #fff;
 }
 
+.btn--stretched{
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
 @media screen and (min-width: 1024px) {
   .btn {
     font-size: 1.5rem;
@@ -531,4 +535,89 @@ a {
     margin-left: 6rem;
   }
 
+}
+
+/* Callouts */
+
+.callout{
+  padding: 4rem;
+  border-radius: 5px;
+}
+
+.callout--primary{
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.callout__heading{
+  color: #fff;
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.callout__content{
+  text-align: center;
+}
+/* Se crea un estilo para la clase btn en la clase padre callout si es que existe */
+
+.callout .btn{
+  align-self: center;
+  justify-self: center;
+}
+
+@media screen and (min-width: 768px) {
+
+  /* Este estilo nos dice "en el callout component, si tenemos un elemento con un grid */
+  .callout .grid--1x2{
+    /* Lo que se hace es dejar todo el espacio libro se lo dara a la primera columna por el fr */
+    grid-template-columns: 1fr auto;
+  }
+
+  .callout__content{
+    text-align: left;
+  }
+
+  .callout .btn{
+    justify-self: start;
+    margin: 0 3rem;
+  }
+}
+
+/* Collapsables */
+
+/* No se essta poniendo un tamaño especifico para el collapsible para que sea flexible */
+.collapsible__header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsible__heading{
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.collapsible__chevron{
+  transform: rotate(-90deg);
+  transition: transform 0.3s;
+}
+
+.collapsible__content{
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+/* El expanded es un modificador a nuestro collapsible- pero si tenemos esta clase en nuestro toplevel, vamos a modificar la clase */
+/* Es siempre la forma de que si esta esta clase adentro de la clase padre, entonces vamos a hacerle esto a la clase hija */
+.collapsible--expanded .collapsible__chevron{
+  transform: rotate(0);
+}
+
+/* Esta nos dice: */
+/* Que si existe la clase expanded y adentro de este bloque hay un elemento con la clase hija, entonces vamos a hacer lo siguiente a la clase hija */
+/* Lo que es mostrarla */
+.collapsible--expanded .collapsible__content{
+  max-height: 100vh;
+  opacity: 1;
 }
